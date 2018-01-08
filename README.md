@@ -13,7 +13,7 @@ Simply serve the `WebSocket.js` file found in the root directory of this project
     })
 </script>
 ```
-Server response must be in JSON and must have this format:
+Server response must be in JSON and must have the following format:
 
 ```js
 { "event": "eventName", "data": "eventData" }
