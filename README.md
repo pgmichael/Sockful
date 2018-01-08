@@ -52,11 +52,11 @@ can be translated to this:
 var socket = new WebSocket("ws://live.localhost:8080")
 
 socket.on("something", function(data){
-    console.log(data)
+    // Do something
 })
 
 socket.on("somethingElse", function(data){
-    console.log(data)
+    // Do something
 })
 ```
 
