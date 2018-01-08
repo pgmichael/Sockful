@@ -27,7 +27,7 @@ var socket = new WebSocket("ws://live.localhost:8080")
 
 function.onmessage = function(event){
     response = JSON.parse(event.data)
-    switch (response.type) {
+    switch (response.event) {
         case "something":
             doSomething(data)
             break;
