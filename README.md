@@ -6,7 +6,7 @@ Simply serve the `Sockful.js` file found in the root directory of this project.
 ```html
 <script src="/scripts/Sockful.js"></script>
 <script>
-    var socket = new WebSocket("ws://live.localhost:8080")
+    var socket = new Sockful("ws://live.localhost:8080")
 
     socket.on("something", function(data){
         console.log(data)
