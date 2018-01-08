@@ -1,10 +1,10 @@
-# pgmichael/WebSocket
+# Sockful
 A thin abstraction layer build on top of the native WebSocket interface purposed for better event handling.
 
 ## How to use
-Simply serve the `WebSocket.js` file found in the root directory of this project.
+Simply serve the `Sockful.js` file found in the root directory of this project.
 ```html
-<script src="/scripts/WebSocket.js"></script>
+<script src="/scripts/Sockful.js"></script>
 <script>
     var socket = new WebSocket("ws://live.localhost:8080")
 
@@ -49,7 +49,7 @@ function doSomethingElse(data){
 can be translated to this:
 
 ```js
-var socket = new WebSocket("ws://live.localhost:8080")
+var socket = new Sockful("ws://live.localhost:8080")
 
 socket.on("something", function(data){
     // Do something

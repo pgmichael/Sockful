@@ -1,6 +1,5 @@
-var OldWebSocket = WebSocket
-var WebSocket = function(url){
-    var socket = new OldWebSocket(url)
+var Sockful = function(url){
+    var socket = new WebSocket(url)
     this.callbacks = {}
 
     this.on = function(eventName, callback){
