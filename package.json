@@ -15,12 +15,13 @@
   },
   "keywords": [
     "WebSocket",
+    "socket",
     "event",
     "handling",
     "events",
     "json"
   ],
-  "author": "Michael Poirier-Ginter",
+  "author": "Michael Poirier-Ginter <michael.poirierginter@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/pgmichael/Sockful/issues"
