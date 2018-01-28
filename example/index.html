@@ -6,10 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="scripts/Sockful.js"></script>
     <script>
-        var socket = new Sockful("ws://live.localhost:8080")
-
+        var socket = new Sockful("ws://live.localhost:8080") 
+               
         socket.on("connection", function(data){
-            console.log(data)
+            console.log("connected: " + data)
+            socket.send("something")
+            socket.sendEvent("event", {
+                key: "value",
+                key2: "value2",
+            })
         })
     </script>
     <title>Document</title>
