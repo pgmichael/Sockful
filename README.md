@@ -1,19 +1,18 @@
 # Sockful
-A thin abstraction layer build on top of the native WebSocket interface purposed for better event handling.
+A thin client-side abstraction layer build on top of the native WebSocket interface purposed for better event handling.
 
 ## How to use
-Simply serve the `Sockful.js` file found in the root directory of this project.
-```html
-<script src="/scripts/Sockful.js"></script>
-<script>
-    var socket = new Sockful("ws://live.localhost:8080")
-
-    socket.on("something", function(data){
-        console.log(data)
-    })
-</script>
+Simply install, import and use!
+```bash
+npm install sockful
 ```
-Server response must be in JSON and must have the following format:
+
+```javascript
+import Sockful from "sockful"
+const socket = new Sockful("ws://socket.localhost:8080/")
+socket.on("event", () => console.log(data))
+```
+Keep in mind the server responses must be in JSON and must have the following format:
 
 ```js
 { "event": "eventName", "data": "eventData" }
@@ -23,16 +22,16 @@ Server response must be in JSON and must have the following format:
 Event handling using the native WebSocket interface becomes unelegant as there are more events to handle. For instance,
 
 ```js
-var socket = new WebSocket("ws://live.localhost:8080")
+const socket = new WebSocket("ws://live.localhost:8080")
 
-function.onmessage = function(event){
-    response = JSON.parse(event.data)
+function.onmessage = (event) => {
+    const response = JSON.parse(event.data)
     switch (response.event) {
         case "something":
-            doSomething(data)
+            doSomething(response.data)
             break;
         case "somethingElse":
-            doSomethingElse(data)
+            doSomethingElse(response.data)
             break;
     }
 }
@@ -49,13 +48,13 @@ function doSomethingElse(data){
 can be translated to this:
 
 ```js
-var socket = new Sockful("ws://live.localhost:8080")
+const socket = new Sockful("ws://live.localhost:8080")
 
-socket.on("something", function(data){
+socket.on("something", (data) => {
     // Do something
 })
 
-socket.on("somethingElse", function(data){
+socket.on("somethingElse", (data) => {
     // Do something
 })
 ```
